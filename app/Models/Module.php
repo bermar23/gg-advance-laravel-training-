@@ -20,6 +20,6 @@ class Module extends Model
     public function numberSeries()
     {
         return $this->hasMany(NumberSeries::class, 'module_code')
-                    ->where('is_active', 1);
+                    ->whereIsActive(1);
     }
 }
