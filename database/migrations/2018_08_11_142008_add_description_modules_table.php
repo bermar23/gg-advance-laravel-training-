@@ -15,7 +15,7 @@ class AddDescriptionModulesTable extends Migration
     {
         Schema::table('modules', function (Blueprint $table) {
             $table->string('name', 120)->change();
-            $table->string('description')->after('name');
+            $table->string('description')->nullable()->after('name');
         });
     }
 
