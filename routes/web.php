@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Route::view('sample', 'sample');
-Route::get('modules/sales-invoice', 'SalesInvoiceController@getSalesInvoiceModule');
+Route::get('modules/sales-invoice/{code}', function(\App\Models\Module $module, $code){
+    return $module->whereCode($code)->with('numberSeriesList')->with('numberSeries')->first();
+});
 Route::get('/home', 'HomeController@index')->name('home');
