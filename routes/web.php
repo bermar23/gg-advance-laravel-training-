@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('anything', 'Modules\SalesInvoiceController@index');
+Route::resource('modules/po', 'PurchaseOrderController');
