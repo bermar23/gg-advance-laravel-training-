@@ -26,16 +26,19 @@ class ModuleSeeder extends Seeder
         NumberSeries::create([
             'code' => 'SI-2017',
             'module_code' => 'SI',
+            'is_active' => 0,
         ]);
 
         NumberSeries::create([
             'code' => 'SI-2018',
             'module_code' => 'SI',
+            'is_active' => 1,
         ]);
 
         NumberSeries::create([
             'code' => 'SI-2019',
             'module_code' => 'SI',
+            'is_active' => 0,
         ]);
     }
 }

@@ -15,7 +15,7 @@ class SalesInvoiceController extends Controller
 
     public function getSalesInvoiceModule()
     {
-        $module = Module::with('numberSeriesList')->findOrFail('si');
+        $module = Module::with('numberSeries')->findOrFail('si');
         return $module;
     }
 }

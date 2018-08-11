@@ -16,4 +16,10 @@ class Module extends Model
     {
         return $this->hasMany(NumberSeries::class, 'module_code');
     }
+
+    public function numberSeries()
+    {
+        return $this->hasMany(NumberSeries::class, 'module_code')
+                    ->where('is_active', 1);
+    }
 }
