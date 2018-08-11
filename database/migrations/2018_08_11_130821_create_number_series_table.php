@@ -17,10 +17,10 @@ class CreateNumberSeriesTable extends Migration
             $table->string('code', 30)->primary();
             $table->string('module_code', 30);
             $table->boolean('is_active')->default(true);
-            $table->unsignedInteger('starting_number');
-            $table->unsignedInteger('ending_number');
-            $table->unsignedInteger('last_number_used');
-            $table->string('last_coded_number_used');
+            $table->unsignedInteger('starting_number')->default(0);
+            $table->unsignedInteger('ending_number')->default(999999);
+            $table->unsignedInteger('last_number_used')->default(0);
+            $table->string('last_coded_number_used')->nullable();
             $table->timestamps();
 
             $table->foreign('module_code')

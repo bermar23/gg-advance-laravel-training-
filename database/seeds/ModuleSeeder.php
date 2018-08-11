@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Module;
+use App\Models\NumberSeries;
 use Illuminate\Database\Seeder;
 
 class ModuleSeeder extends Seeder
@@ -20,6 +21,21 @@ class ModuleSeeder extends Seeder
         factory(Module::class, 1)->create([
             'code' => 'PO',
             'name' => 'Purchase Order'
+        ]);
+
+        NumberSeries::create([
+            'code' => 'SI-2017',
+            'module_code' => 'SI',
+        ]);
+
+        NumberSeries::create([
+            'code' => 'SI-2018',
+            'module_code' => 'SI',
+        ]);
+
+        NumberSeries::create([
+            'code' => 'SI-2019',
+            'module_code' => 'SI',
         ]);
     }
 }
