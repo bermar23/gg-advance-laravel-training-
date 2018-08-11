@@ -12,12 +12,12 @@ class ModuleSeeder extends Seeder
      */
     public function run()
     {
-        Module::create([
+        factory(Module::class, 1)->create([
             'code' => 'SI',
             'name' => 'Sales Invoice'
         ]);
 
-        Module::create([
+        factory(Module::class, 1)->create([
             'code' => 'PO',
             'name' => 'Purchase Order'
         ]);
