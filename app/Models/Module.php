@@ -11,4 +11,9 @@ class Module extends Model
     protected $fillable = [
         'code', 'name'
     ];
+
+    public function number_series_list()
+    {
+        return $this->hasMany(NumberSeries::class, 'module_code');
+    }
 }

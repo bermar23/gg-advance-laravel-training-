@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Module;
 use Illuminate\Http\Request;
 
 class SalesInvoiceController extends Controller
@@ -10,5 +11,11 @@ class SalesInvoiceController extends Controller
     {
         print_r($request->input('field'));
         return view('sample');
+    }
+
+    public function getSalesInvoiceModule()
+    {
+        $module = Module::findOrFail('si');
+        return $module;
     }
 }

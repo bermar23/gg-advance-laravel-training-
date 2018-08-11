@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::view('sample', 'sample');
-
+Route::get('modules/sales-invoice', 'SalesInvoiceController@getSalesInvoiceModule');
 Route::get('/home', 'HomeController@index')->name('home');
