@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('modules/po', 'PurchaseOrderController');
+Route::view('sample', 'sample');
