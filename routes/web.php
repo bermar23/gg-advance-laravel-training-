@@ -15,9 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'modules'], function(){
-    Route::get('si', 'SalesInvoiceController@show')->name('modules.si.show');
-    Route::resource('po', 'PurchaseOrderController');
-});
-
 Route::view('sample', 'sample');
