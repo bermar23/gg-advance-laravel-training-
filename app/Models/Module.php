@@ -12,7 +12,7 @@ class Module extends Model
         'code', 'name'
     ];
 
-    public function number_series_list()
+    public function numberSeriesList()
     {
         return $this->hasMany(NumberSeries::class, 'module_code');
     }
