@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class SalesInvoiceController extends Controller
 {
-    public function show($id)
+    public function show()
     {
-        return 'HI im showing ' . $id;
+        return view('sample');
     }
 }

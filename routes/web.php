@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('modules/si/{id}', 'SalesInvoiceController@show');
+Route::get('modules/si', 'SalesInvoiceController@show')->name('modules.si.show');
 Route::resource('modules/po', 'PurchaseOrderController');
 Route::view('sample', 'sample');

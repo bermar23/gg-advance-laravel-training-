@@ -68,7 +68,8 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    IM HTML
+                    IM HTML<br>
+                    {{ route('modules.si.show') }}
                 </div>
             </div>
         </div>
