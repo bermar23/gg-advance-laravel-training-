@@ -27,25 +27,9 @@ class PostsController extends Controller
      */
     public function store(SavePostRequest $request)
     {
-        $user = JWTAuth::user();
+        $post = new Post();        
 
-        $post = new Post();
-        $post->fill($request->all());
-        $post->user_id = $user->id;
-        $post->save();
-
-        return $post;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return $this->savePost(new Post(), $request);
     }
 
     /**
@@ -55,9 +39,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SavePostRequest $request, $id)
     {
-        //
+        return $this->savePost(Post::FindOrFail($id), $request);
     }
 
     /**
@@ -69,5 +53,15 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function savePost(Post $post, SavePostRequest $request)
+    {
+        $user = JWTAuth::user();
+        $post->fill($request->all());
+        $post->user_id = $user->id;
+        $post->save();
+
+        return $post;
     }
 }
