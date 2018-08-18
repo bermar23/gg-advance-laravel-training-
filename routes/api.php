@@ -20,6 +20,11 @@ Route::group(['prefix' => 'v1'], function (){
         Route::get('current-user', function(){
             return Tymon\JWTAuth\Facades\JWTAuth::user();
         });
+
+        
+        Route::resource('posts', 'PostsController');
+
+        Route::post('posts-store', 'PostsController@store');
     });
-    
+
 });
