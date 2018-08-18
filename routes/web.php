@@ -22,3 +22,6 @@ Route::get('modules/sales-invoice/{code}', function(\App\Models\Module $module, 
     return $module->whereCode($code)->with('numberSeriesList')->with('numberSeries')->first();
 });
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('my-name', 'SalesInvoiceController@myName');
