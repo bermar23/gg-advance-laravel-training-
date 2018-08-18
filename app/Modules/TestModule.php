@@ -2,17 +2,9 @@
 
 namespace App\Modules;
 
-class TestModule
+interface TestModule
 {
 
-    public function __construct()
-    {
-
-    }
-
-    public function displayText()
-    {
-        return 'Bermar';
-    }
+    function displayText();
 
 }
