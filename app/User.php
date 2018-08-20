@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Support\Facades\Request;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -35,6 +36,10 @@ class User extends Authenticatable implements JWTSubject
 
     public function getJWTIdentifier()
     {
-        return $this->getKey();
+        //return $this->getKey();
+        return encrypt(json_encode([
+            'key' => $this->getKey(),
+            'ip' => Request::ip()
+        ]));
     }
 }
