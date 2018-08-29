@@ -20,11 +20,11 @@ class JWTTokenTheftProtectedAuthProvider extends Illuminate
     public function byId($id)
     {
         $keys = json_decode(decrypt($id));
-        
+
         if ($keys->ip != $this->request->ip()) {
             throw new HttpException('IP Address did not match', 401);
         }
-        
+
         return parent::byId($keys->key);
     }
 

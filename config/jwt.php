@@ -286,7 +286,8 @@ return [
         |
         */
 
-        'auth' => Tymon\JWTAuth\Providers\Auth\Illuminate::class,
+        //'auth' => Tymon\JWTAuth\Providers\Auth\Illuminate::class,
+        'auth' => App\Modules\Auth\JWTTokenTheftProtectedAuthProvider::class,
 
         /*
         |--------------------------------------------------------------------------
